@@ -1,0 +1,112 @@
+Gamified Quiz Platform (India-first) — Product Requirement Document (PRD)
+
+1) PRODUCT OVERVIEW
+A real-time, gamified quiz platform for working professionals and students. Delivers engaging knowledge checks, live competitions, and actionable insights. Adds an AI Quiz Builder that generates questions from PDF/Word uploads, URLs, or pasted text. Designed for India-first use: mobile-first, low-bandwidth, and multilingual (English + Indian languages).
+
+Purpose
+• Increase learning engagement with game mechanics (confetti, streaks, team play) while keeping a professional option (minimal mode). 
+• Reduce time-to-create via AI-assisted question generation and a reusable question bank.
+• Provide fair modes (accuracy-first, speed-optional) responding to complaints about “fastest finger” bias.
+• Offer transparent pricing and generous free capacity (addressing price/cap frustration).
+
+— Research rationale: Users complain about restrictive free tiers and player caps; students report “quiz fatigue” and overemphasis on speed; professionals want a less kiddish tone and simple joining (QR/code).
+
+2) TARGET AUDIENCE
+Primary
+• Working professionals (L&D, trainers, team leads): need polished hosting, team/co-op modes, analytics, CSV export, and brandable tone. 
+• Students (classes, clubs, coaching): want colorful, fun, low-friction join, instant feedback, and low data usage.
+
+Secondary
+• Teachers/lecturers/tutors: quick authoring (AI), reusable content, and control over speed vs. accuracy. 
+• Event hosts/communities: large live rooms, easy QR join, simple moderation.
+
+Key needs to satisfy
+• Easy content creation (AI from docs/URL/text). • Low ceremony join (PIN/QR, no account for participants). • Flexible scoring beyond speed. • Works great on Indian mobile networks/devices. • Multilingual UI/content.
+
+3) CORE FEATURES (3)
+A) AI QUIZ BUILDER (Docs/URL/Text → Questions)
+• Upload PDF/Word, paste URL or text; extract content; generate MCQ/True/False/Short Answer/Poll questions with suggested answers and difficulty tags.
+• Provide source citations (page/URL) for each generated item; allow human edit/approve; save to quiz/question bank.
+• Safety & quality: de-duplication, profanity filter, hallucination check (reject if confidence low); support topic/keyword prompts.
+— Justification: Creation time is a major pain; users want import/generation and question banks.
+
+B) LIVE GAME ENGINE (Host & Play)
+• Host creates session → session code + QR. Players join on mobile via code/QR (no login required for players).
+• Modes: Speed (classic), Accuracy (scores correctness over speed), Team/Co-op (aggregate scores; optional shared lifelines). 
+• Engagement: confetti on correct, streak bonuses (3/5+), countdown animations, sound cues with mute toggle; anti-spam (one answer/question), host controls (start/pause/next/end).
+— Justification: Overemphasis on speed is a common complaint; teams/co-op and richer feedback sustain engagement without fatigue.
+
+C) INSIGHTS, LOCALIZATION & EXPORTS
+• Results/leaderboard: per-player score, streaks; per-question accuracy/time; CSV export.
+• Multilingual UI (English + Hindi at MVP; add 2+ regional languages soon after). Support quiz content translation workflow (human review).
+• Low-bandwidth design: lightweight pages, image compression, progressive loading; PWA basics for repeat play.
+— Justification: Professionals need analytics/exports; Indian users need language support and reliable mobile performance.
+
+4) ESSENTIAL USER JOURNEYS
+A) Onboarding (Host/Creator)
+1. Sign in with Email/Google → pick role (Professional/Student/Teacher) and preferred language.
+2. (Optional) Organization name & logo for branding; choose default mode (Speed/Accuracy).
+3. Land on Dashboard: “Create Quiz” (AI or manual), “Host Live,” “Question Bank,” “Results.”
+
+B) Content Creation (AI-first with human review)
+1. Click “Create with AI” → Upload document / Paste URL / Paste text / Enter topic.
+2. App extracts text → shows proposed questions (type, options, correct answer, difficulty, source).
+3. User bulk-accepts/edits questions; selects language (or auto-translate draft); saves quiz; preview.
+
+C) Hosting a Live Session
+1. Open quiz → “Host Live” → session code + QR shown; choose mode (Speed/Accuracy/Team), timer, and streaks on/off.
+2. Players join on mobile via code/QR; nickname entry; lobby shows participant count.
+3. Host Start → question displays; realtime answers + timer; Next/End controls; automatic scoring & streaks.
+
+D) Player Participation
+1. Open join URL or /join; enter code; pick nickname; (no login required for players).
+2. See question on device with clear options; answer once; get instant feedback (confetti, correctness, streak).
+3. See interim leaderboard between questions; continue until end; final standings shown.
+
+E) Results & Progress Tracking
+1. Host sees summary: top players/teams, question difficulty (accuracy %, avg time), common wrong answers.
+2. Export CSV; share link to session results.
+3. For signed-in students, award badges; show personal progress history by topic/difficulty.
+
+5) DESIGN GUIDELINES (UI/UX & Visual)
+Principles
+• Mobile-first: thumb-friendly buttons, large tap targets, minimal input fields.
+• Join in ≤ 5 seconds: QR + short code; no accounts for players.
+• Clear hierarchy: professional host UI (minimal, brandable); playful player UI (color, confetti) with “mute/minimal mode.”
+• Performance: compressed assets, skeleton loading, no blocking modals during play; resilient to network drops.
+• Accessibility & Languages: switch UI language at any time; store locale in profile; clear fonts with high contrast; dyslexia-friendly option.
+
+Visual Direction
+• Two themes: Playful (students) and Minimal (professionals). Colorful gradients and micro-animations for players; subdued palette for host. Confetti and streak animations are short and optional.
+
+Content & Language
+• All UI copy routed through i18n; translation files for en/hi at MVP. Content translation workflow: AI-suggested translation → human review before publish.
+
+6) MVP SCOPE (V1)
+Included
+• Auth (Email/Google) for hosts; players join with nickname only.
+• AI Quiz Builder: upload PDF/Word, URL, or text → generate MCQ/TF/Short Answer/Poll; human review + edits; citations saved.
+• Manual quiz builder + question bank (reuse questions across quizzes).
+• Live Engine: session creation, code/QR, Speed & Accuracy modes, Team mode (basic), timer, confetti, streaks, anti-spam (one answer/question).
+• Realtime updates for question index, participant joins, and leaderboard.
+• Results & Analytics: per-question accuracy/time; per-player scores/streaks; CSV export.
+• Multilingual UI (English + Hindi) + content translation workflow (drafts).
+• India-first performance: mobile-first pages, compressed assets, join under low bandwidth.
+
+Excluded (Post‑MVP)
+• Deep LMS integrations (Classroom, Teams), advanced AI tuning (Bloom/NER), slide/PPT import, advanced pro branding, subscriptions/payments.
+• Gamemode variants (jeopardy, puzzle re-order) beyond basics; adaptive learning paths.
+• Full PWA offline play for hosts (players get basic resilience only).
+
+Measurable Success (MVP)
+• Time to first quiz: ≤ 10 minutes using AI Builder (from upload to playable quiz).
+• Join time: ≤ 5 seconds via QR/code on 4G connection.
+• Session reliability: 99.9% uptime during live play; no hangs across 100 concurrent players.
+• Creation satisfaction: ≥ 80% users keep at least 50% of AI‑generated items after review.
+• Engagement: average session completion rate ≥ 85%; repeat usage ≥ 50% week‑over‑week in pilot cohorts.
+
+Implementation Notes (brief)
+• Stack: Next.js + Supabase (Auth, DB, Realtime, Storage). i18n with JSON dictionaries; language toggle in header.
+• AI pipeline (service): extract text (PDF/Doc parser), chunk, prompt LLM to propose questions+answers+explanations with source mapping; de-dup; confidence scoring; moderation.
+• Fairness: scoring modes selectable; default to Accuracy for classrooms; Speed optional for games.
+• Data privacy: do not retain uploaded documents after quiz creation unless user opts in (GDPR-friendly); show “source used” list in quiz editor.

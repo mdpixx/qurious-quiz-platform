@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+  
+  /* Professional Theme Colors - N8N Inspired */
+  --playful-background: hsl(0, 0%, 100%);
+  --playful-foreground: hsl(224, 71.4%, 4.1%);
+  --playful-card: hsl(0, 0%, 100%);
+  --playful-card-foreground: hsl(224, 71.4%, 4.1%);
+  --playful-primary: hsl(220.9, 39.3%, 11%);
+  --playful-primary-foreground: hsl(0, 0%, 98%);
+  --playful-secondary: hsl(220, 14.3%, 95.9%);
+  --playful-secondary-foreground: hsl(220.9, 39.3%, 11%);
+  --playful-accent: hsl(217.2, 91.2%, 59.8%);
+  --playful-accent-foreground: hsl(0, 0%, 98%);
+  --playful-muted: hsl(220, 14.3%, 95.9%);
+  --playful-muted-foreground: hsl(220, 8.9%, 46.1%);
+  --playful-border: hsl(220, 13%, 91%);
+  --playful-input: hsl(220, 13%, 91%);
+  --playful-ring: hsl(217.2, 91.2%, 59.8%);
+  --playful-popover: hsl(0, 0%, 100%);
+  --playful-popover-foreground: hsl(224, 71.4%, 4.1%);
+  --playful-success: hsl(142, 76%, 36%);
+  --playful-warning: hsl(38, 92%, 50%);
+  --playful-destructive: hsl(0, 84%, 60%);
+  --playful-destructive-foreground: hsl(0, 0%, 98%);
+  
+  /* Minimal Theme Colors - N8N Professional */
+  --minimal-background: hsl(0, 0%, 100%);
+  --minimal-foreground: hsl(224, 71.4%, 4.1%);
+  --minimal-card: hsl(0, 0%, 100%);
+  --minimal-card-foreground: hsl(224, 71.4%, 4.1%);
+  --minimal-primary: hsl(220.9, 39.3%, 11%);
+  --minimal-primary-foreground: hsl(0, 0%, 98%);
+  --minimal-secondary: hsl(220, 14.3%, 95.9%);
+  --minimal-secondary-foreground: hsl(220.9, 39.3%, 11%);
+  --minimal-accent: hsl(217.2, 91.2%, 59.8%);
+  --minimal-accent-foreground: hsl(0, 0%, 98%);
+  --minimal-muted: hsl(220, 14.3%, 95.9%);
+  --minimal-muted-foreground: hsl(220, 8.9%, 46.1%);
+  --minimal-border: hsl(220, 13%, 91%);
+  --minimal-input: hsl(220, 13%, 91%);
+  --minimal-ring: hsl(217.2, 91.2%, 59.8%);
+  --minimal-popover: hsl(0, 0%, 100%);
+  --minimal-popover-foreground: hsl(224, 71.4%, 4.1%);
+  --minimal-success: hsl(142, 76%, 36%);
+  --minimal-warning: hsl(38, 92%, 50%);
+  --minimal-destructive: hsl(0, 84%, 60%);
+  --minimal-destructive-foreground: hsl(0, 0%, 98%);
+  
+  /* Default to Playful Theme */
+  --background: var(--playful-background);
+  --foreground: var(--playful-foreground);
+  --card: var(--playful-card);
+  --card-foreground: var(--playful-card-foreground);
+  --primary: var(--playful-primary);
+  --primary-foreground: var(--playful-primary-foreground);
+  --secondary: var(--playful-secondary);
+  --secondary-foreground: var(--playful-secondary-foreground);
+  --accent: var(--playful-accent);
+  --accent-foreground: var(--playful-accent-foreground);
+  --muted: var(--playful-muted);
+  --muted-foreground: var(--playful-muted-foreground);
+  --border: var(--playful-border);
+  --input: var(--playful-input);
+  --ring: var(--playful-ring);
+  --success: var(--playful-success);
+  --warning: var(--playful-warning);
+  --destructive: var(--playful-destructive);
+  --destructive-foreground: var(--playful-destructive-foreground);
+  --popover: var(--playful-popover);
+  --popover-foreground: var(--playful-popover-foreground);
+  
+  /* Font settings */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  
+  /* Sidebar Variables - Professional Theme */
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(224, 71.4%, 4.1%);
+  --sidebar-primary: hsl(220.9, 39.3%, 11%);
+  --sidebar-primary-foreground: hsl(0, 0%, 98%);
+  --sidebar-accent: hsl(220, 14.3%, 95.9%);
+  --sidebar-accent-foreground: hsl(224, 71.4%, 4.1%);
+  --sidebar-border: hsl(220, 13%, 91%);
+  --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+.theme-minimal {
+  --background: var(--minimal-background);
+  --foreground: var(--minimal-foreground);
+  --card: var(--minimal-card);
+  --card-foreground: var(--minimal-card-foreground);
+  --primary: var(--minimal-primary);
+  --primary-foreground: var(--minimal-primary-foreground);
+  --secondary: var(--minimal-secondary);
+  --secondary-foreground: var(--minimal-secondary-foreground);
+  --accent: var(--minimal-accent);
+  --accent-foreground: var(--minimal-accent-foreground);
+  --muted: var(--minimal-muted);
+  --muted-foreground: var(--minimal-muted-foreground);
+  --border: var(--minimal-border);
+  --input: var(--minimal-input);
+  --ring: var(--minimal-ring);
+  --success: var(--minimal-success);
+  --warning: var(--minimal-warning);
+  --destructive: var(--minimal-destructive);
+  --destructive-foreground: var(--minimal-destructive-foreground);
+  --popover: var(--minimal-popover);
+  --popover-foreground: var(--minimal-popover-foreground);
+  
+  /* Sidebar Variables - Professional Minimal Theme */
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(224, 71.4%, 4.1%);
+  --sidebar-primary: hsl(220.9, 39.3%, 11%);
+  --sidebar-primary-foreground: hsl(0, 0%, 98%);
+  --sidebar-accent: hsl(220, 14.3%, 95.9%);
+  --sidebar-accent-foreground: hsl(224, 71.4%, 4.1%);
+  --sidebar-border: hsl(220, 13%, 91%);
+  --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+.theme-minimal .gradient-primary {
+  background: hsl(220.9, 39.3%, 11%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    font-family: var(--font-sans);
+    background: var(--background);
+    min-height: 100vh;
+  }
+}
+
+/* Custom animations */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% { 
+    border-color: hsl(var(--primary)); 
+  }
+  50% { 
+    border-color: hsl(var(--accent)); 
+  }
+}
+
+@keyframes slide-in {
+  from { 
+    transform: translateX(-100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes bounce-in {
+  from { 
+    transform: scale(0) rotate(180deg); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes skeleton-loading {
+  0% { 
+    background-position: 200% 0; 
+  }
+  100% { 
+    background-position: -200% 0; 
+  }
+}
+
+/* Modern Design Tokens - Spacing Scale */
+:root {
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  
+  /* Shadow Tokens */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Button Variants - Professional N8N Style */
+.btn-primary-lg {
+  background: hsl(220.9, 39.3%, 11%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: var(--spacing-6) var(--spacing-8);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  color: hsl(0, 0%, 98%);
+  border: none;
+}
+
+.btn-primary-lg:hover {
+  background: hsl(220.9, 39.3%, 15%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary-lg {
+  background: hsl(217.2, 91.2%, 59.8%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: var(--spacing-6) var(--spacing-8);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  color: hsl(0, 0%, 98%);
+  border: none;
+}
+
+.btn-secondary-lg:hover {
+  background: hsl(217.2, 91.2%, 65%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Enhanced Card Styles - N8N Professional */
+.card-modern {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(220, 13%, 91%);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-modern:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-elevated {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid hsl(220, 13%, 91%);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-elevated:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Utility classes */
+.confetti-piece {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  animation: confetti-fall 2s linear forwards;
+}
+
+.pulse-border {
+  animation: pulse-border 2s infinite;
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--background)) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Mobile-first optimizations */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Hide scrollbars but maintain functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Professional N8N Style Backgrounds */
+.gradient-primary {
+  background: hsl(220.9, 39.3%, 11%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.gradient-accent {
+  background: hsl(217.2, 91.2%, 59.8%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.gradient-success {
+  background: hsl(142, 76%, 36%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Clean Card Backgrounds */
+.gradient-card {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(220, 13%, 91%);
+}
+
+/* Clean effect for panels */
+.glass-panel {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(220, 13%, 91%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* High contrast mode for accessibility */
+@media (prefers-contrast: high) {
+  :root {
+    --border: hsl(0, 0%, 0%);
+    --ring: hsl(0, 0%, 0%);
+  }
+  
+  .theme-minimal {
+    --border: hsl(0, 0%, 0%);
+    --ring: hsl(0, 0%, 0%);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Sidebar Explicit Styling - Ensure solid backgrounds */
+[data-testid="sidebar-main"],
+.bg-sidebar,
+[data-sidebar="sidebar"] {
+  background-color: #ffffff !important; /* White background */
+  border-right: 1px solid #e2e8f0 !important; /* Light gray border */
+}
+
+.theme-minimal [data-testid="sidebar-main"],
+.theme-minimal .bg-sidebar,
+.theme-minimal [data-sidebar="sidebar"] {
+  background-color: #ffffff !important; /* White background for minimal theme */
+  border-right: 1px solid #d1d5db !important; /* Minimal theme border */
+}
+
+/* Sidebar text colors */
+.text-sidebar-foreground {
+  color: hsl(220, 90%, 12%) !important;
+}
+
+.theme-minimal .text-sidebar-foreground {
+  color: hsl(220, 90%, 10%) !important;
+}
+
+/* Sidebar accent colors for hover states */
+.bg-sidebar-accent {
+  background-color: hsl(240, 50%, 92%) !important;
+}
+
+.theme-minimal .bg-sidebar-accent {
+  background-color: hsl(220, 20%, 90%) !important;
+}
+
+/* Ensure main content offset for sidebar */
+.peer-data-\[state\=expanded\]\:ml-\[var\(--sidebar-width\)\] {
+  margin-left: 16rem !important;
+}
+
+/* Dark mode support (if needed later) */
+@media (prefers-color-scheme: dark) {
+  .auto-theme {
+    --background: hsl(0, 0%, 0%);
+    --foreground: hsl(0, 0%, 95%);
+    --card: hsl(0, 0%, 5%);
+    --card-foreground: hsl(0, 0%, 95%);
+  }
+}
